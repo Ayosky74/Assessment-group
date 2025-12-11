@@ -1,55 +1,63 @@
-def addition(a, b):
-    """this adds 2 numbers a,b and returns the sum"""
-    return a + b
+import math
+
+def add(x, y):
+    return x + y
 
 
-def subtract(a, b):
-    """ this subtracts 2 numbers a,b and returns the  result"""
-    return a - b
+def subtract(x, y):
+    return x - y
 
 
-def multiply(a, b):
-    """ these multiples 2 numbers a,b and returns the multiplication"""
-    return a * b
+def multiply(x, y):
+    return x * y
 
 
-def division(a, b):
-    if b == 0:
-        return "Error! Division bu zero."
-    return a / b
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+
+def power(x, y):
+    return math.pow(x, y)
 
 
 def calculate():
-    global result
     print("Select operation:")
     print("1. Add (+)")
-    print("2.Subtract (-)")
+    print("2. Subtract (-)")
     print("3. Multiply (*)")
     print("4. Divide (/)")
-    print("5. Exit")
+    print("5. Power(^)")
+    print("6. Exit")
 
     while True:
-        choice = input("Enter choice (1/2/3/4/5): ")
-        if choice in ('1', '2', '3', '4'):
+
+        choice = input("Enter choice (1/2/3/4/5/6): ")
+
+        if choice in ('1', '2', '3', '4','5'):
             try:
-                number1 = float(input("Enter first number: "))
-                number2 = float(input("Enter second number: "))
+
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
             except ValueError:
                 print("Invalid input. Please enter a valid number.")
                 continue
 
             if choice == '1':
-                result = addition(number1, number2)
+                result = add(num1, num2)
             elif choice == '2':
-                result = subtract(number1, number2)
+                result = subtract(num1, num2)
             elif choice == '3':
-                result = multiply(number1, number2)
+                result = multiply(num1, num2)
             elif choice == '4':
-                result = division(number1, number2)
+                result = divide(num1, num2)
+            elif choice == '5':
+                result = power(num1, num2)
 
             print("Result:", result)
 
-        elif choice == '5':
+        elif choice == '6':
+
             print("Exiting Calculator. Goodbye!")
             break
 
