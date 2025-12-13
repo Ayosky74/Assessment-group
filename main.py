@@ -1,18 +1,22 @@
 import math
 
 def add(x, y):
+  """adds two numbers"""
     return x + y
 
 
 def subtract(x, y):
+  """subtracts two numbers"""
     return x - y
 
 
 def multiply(x, y):
+  """multiplies two numbers"""
     return x * y
 
 
 def divide(x, y):
+  """divides two numbers, handles division by zero"""
     if y == 0:
         return "Error! Division by zero."
     return x / y
@@ -66,4 +70,5 @@ def calculate():
 
 
 calculate()
+
 
